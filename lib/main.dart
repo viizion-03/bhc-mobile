@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:bhc_mobile/pages/auth/login.dart';
+import 'package:bhc_mobile/pages/auth/signup.dart';
+import 'package:bhc_mobile/pages/home.dart';
+import 'package:bhc_mobile/pages/launch.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +20,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LaunchPage(),
+      routes: {
+        '/launch': (context) => const LaunchPage(),
+        '/home': (context) => const HomePage(),
+        '/auth/login': (context) => const LoginPage(),
+        '/auth/signup': (context) => const SignupPage(),
+      }
     );
   }
 }
